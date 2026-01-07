@@ -1,0 +1,80 @@
+@use './Variables.scss';
+
+html{
+  height: 100%
+}
+
+body {
+  font-family: bodyFont;
+  font-size: Variables.$bodyFontSize;
+  color: Variables.$font-color;
+  background-color: Variables.$background-color;
+  margin: 0;
+  height: 100%;
+
+  /*
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unsmoothed;
+  font-smooth: never;
+  
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  */
+}
+
+a {
+  color: Variables.$pinkColor;
+}
+
+a:hover{
+  color: Variables.$font-color;
+}
+
+.pinkButton:hover {
+  margin-left: Variables.$defaultBorderWidth;
+  margin-top: Variables.$defaultBorderWidth;
+  margin-right: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+
+.pinkButton {
+  display: flex;
+  flex-direction: row;
+  background-color: Variables.$pinkColor;
+  align-items: center;
+  justify-content: center;
+  box-shadow: Variables.$defaultBorderWidth Variables.$defaultBorderWidth 0 0 Variables.$font-color;
+  margin-right: Variables.$defaultBorderWidth;
+  margin-bottom: Variables.$defaultBorderWidth;
+
+  // Link Formatting
+  a {
+    padding: Variables.$defaultPadding;
+    font-size: Variables.$buttonFontSize;
+    color: black;
+    width:100%;
+    text-align: center;
+  }
+  a:link {
+    color: black;
+    text-decoration: none;
+  }
+  a:hover {
+    color: black;
+    text-decoration: none;
+  }
+  a:visited {
+    color: black;
+    text-decoration: none;
+  }
+  a:visited:hover {
+    color: black;
+    text-decoration: none;
+  }
+  a:active {
+    color: black;
+    text-decoration: none;
+  }
+}

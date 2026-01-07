@@ -1,0 +1,27 @@
+@use './Variables.scss';
+
+.banner {
+    margin-top: 0;
+    padding-top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: Variables.$defaultBorder;
+    height: Variables.$headerHeight;
+}
+.banner a {
+    display: flex;
+    height: 100%;
+}
+.banner a img {
+    @media (max-aspect-ratio: Variables.$aspectRatioThresh) {
+        width: 100%;
+        height: auto;
+    }
+    @media (min-aspect-ratio: Variables.$aspectRatioThresh) {
+        height: 100%;
+        width: auto;
+    }
+    image-rendering: pixelated;
+}

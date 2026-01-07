@@ -1,0 +1,69 @@
+@use './Variables.scss';
+
+.footerMobileChild{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.footer {
+    &.mobile{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    background-color: Variables.$background-color;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: sticky;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: Variables.$defaultBorder;
+    height: Variables.$footerHeight;
+    z-index: 100;
+    #sourceCode {
+        display: flex;
+        flex-direction: row;
+        margin-left: 0.5vw;
+        font-size: Variables.$bodyFontSize;
+        p {
+            justify-content: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            height: 100%;
+        }
+        a {
+            height: 100%;
+        }
+        a:link, a:visited {
+            color: Variables.$pinkColor;
+        }
+        a:hover, a:visited:hover, a:active {
+            color: Variables.$font-color;
+        }
+    }
+    #socials {
+        display: flex;
+        flex-direction: row;
+        margin-right: 0.1vw;
+        height: 100%;
+    }
+    a {
+        height: 100%;
+        img {
+            height: 100%;
+            image-rendering: pixelated;
+        }
+    }
+    .magnifyParent{
+        height: 100%;
+        img {
+            height: 100%;
+            image-rendering: pixelated;
+        }
+    }
+}

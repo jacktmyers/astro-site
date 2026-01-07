@@ -1,0 +1,47 @@
+$aspectRatioThresh: 8/9;
+
+:root {
+    --scaleFactor: 1;
+    --buttonFontSize: calc(3.5vh * var(--scaleFactor));
+    --bodyFontSize: calc(2vh * var(--scaleFactor));
+    --smallBodyFontSize: calc(1.5vh * var(--scaleFactor));
+    --headerFontSize: calc(5vh * var(--scaleFactor));
+    --footerHeight: calc(5vh * var(--scaleFactor));
+    
+    @media (max-aspect-ratio: $aspectRatioThresh) {
+        --buttonFontSize: calc(5vw * var(--scaleFactor));
+        --bodyFontSize: calc(4vw * var(--scaleFactor));
+        --smallBodyFontSize: calc(3.5vw * var(--scaleFactor));
+        --headerFontSize: calc(7vw * var(--scaleFactor));
+        --footerHeight: calc(17vw * var(--scaleFactor));
+    }
+}
+
+$scaleFactor: var(--scaleFactor);
+$buttonFontSize: var(--buttonFontSize);
+$bodyFontSize: var(--bodyFontSize);
+$smallBodyFontSize: var(--smallBodyFontSize);
+$headerFontSize: var(--headerFontSize);
+$footerHeight: var(--footerHeight);
+
+$font-color: white;
+$background-color: black;
+$pinkColor: #ffa4a4;
+$pinkPressed: #d38787;
+$defaultBorderWidth: 0.5vh;
+$defaultBorder: $defaultBorderWidth solid;
+$defaultPadding: 1vh;
+
+$calcFooterHeight: calc($footerHeight + $defaultBorderWidth);
+$headerHeight: $footerHeight;
+$calcHeaderHeight: calc($headerHeight + $defaultBorderWidth);
+
+@font-face {
+  font-family: headerFont;
+  src: url("/fonts/DotGothic16-Regular.woff2") format("woff");
+}
+
+@font-face {
+  font-family: bodyFont;
+  src: url("/fonts/Web437_IBM_VGA_9x16.woff") format("woff");
+}

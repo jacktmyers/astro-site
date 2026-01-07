@@ -1,0 +1,75 @@
+@use './Variables.scss';
+
+.body{
+    overflow: hidden;
+}
+
+.mobileHomeCenterParent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homeParent{
+    width: 100%;
+    height: calc(100vh - Variables.$calcFooterHeight - Variables.$calcHeaderHeight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	.borderElements {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		justify-content: center;
+		img {
+			image-rendering: pixelated;
+            width: 4vh;
+            height: 4vh;
+            margin: 1vh;
+		}
+	}
+    .homeCenter{
+        &.mobile{
+            flex-direction: column;
+        }
+        max-width: 100vw;
+        align-items: center;
+        padding: Variables.$defaultPadding;
+        display: flex;
+        width: fit-content;
+        border: Variables.$defaultBorder;
+        .headshot {
+            &.mobile{
+                width: calc(60vw * Variables.$scaleFactor);
+            }
+            &.desktop{
+                height: calc(30vh * Variables.$scaleFactor);
+            }
+        }
+        .column{
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: Variables.$defaultPadding;
+            gap: Variables.$defaultPadding;
+            .navButtons{
+                gap: Variables.$defaultPadding;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                p {
+                    text-align: center;
+                    text-wrap: wrap;
+                    width: 100%;
+                    margin: 0;
+                    font-size: Variables.$smallBodyFontSize;
+                }
+                .pinkButtons{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

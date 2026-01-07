@@ -1,0 +1,21 @@
+@use './Variables.scss';
+
+.typedParent{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    padding-left: Variables.$defaultPadding;
+    padding-right: Variables.$defaultPadding;
+    h1 {
+        font-weight: normal;
+        font-family: headerFont;
+        font-size: Variables.$headerFontSize;
+        margin: 0;
+    }
+    .typed {
+        color: Variables.$font-color;
+    }
+    .invisible {
+        color: Variables.$background-color;
+    }
+}
