@@ -1,7 +1,7 @@
 ---
 id: practice
-listingTitle: Worry Catcher
-title: Worry Catcher
+listingTitle: Practice
+title: Practice Pieces
 order: 10
 ---
 Nothing special, just two practice pieces.
