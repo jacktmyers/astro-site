@@ -4,9 +4,9 @@ listingTitle: Worry Catcher
 title: Worry Catcher
 order: 3
 ---
-![](/src/img/metals/worry/worryCatcher1.jpg)
-![](/src/img/metals/worry/worryCatcher2.jpg)
-![](/src/img/metals/worry/worryCatcher3.jpg)
+![alt-text](../../img/metals/worry/worryCatcher1.jpg)
+![alt-text](../../img/metals/worry/worryCatcher2.jpg)
+![alt-text](../../img/metals/worry/worryCatcher3.jpg)
 
 ### The short description I wrote for this project:
 

@@ -13,7 +13,7 @@ Unity poker is a simple Unity game I made for a job interview. The game has two 
 
 Pretty simple game and standard aesthetics. The cards are constructed using a combination of three sprites. The number, the suit and the background:
 
-![](/src/img/engineering/poker/cardCombo.png)
+![alt-text](../../img/engineering/poker/cardCombo.png)
 *Construction of the Ace of Spades*
 
 The other notable feature is the smooth card movement.The cards don’t move by setting their location. Instead their final location is set as a field and each frame a new intermediate location is set based on a linear interpolation of the current position and then new one. The lerp amount is a tweakable parameter.
@@ -22,6 +22,6 @@ The bulk of the work after this was the logic required to deal cards, check for 
 
 ### Here’s some gameplay:
 
-![](/src/img/engineering/poker/blackJack.gif)
-![](/src/img/engineering/poker/jacksLoss.gif)
-![](/src/img/engineering/poker/jacksWin.gif)
+![alt-text](../../img/engineering/poker/blackJack.gif)
+![alt-text](../../img/engineering/poker/jacksLoss.gif)
+![alt-text](../../img/engineering/poker/jacksWin.gif)

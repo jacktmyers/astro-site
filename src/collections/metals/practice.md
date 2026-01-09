@@ -6,6 +6,6 @@ order: 10
 ---
 Nothing special, just two practice pieces.
 
-![](/src/img/metals/practice/thumb.jpg)
-![](/src/img/metals/practice/practice1.jpg)
-![](/src/img/metals/practice/practice2.jpg)
+![alt-text](../../img/metals/practice/thumb.jpg)
+![alt-text](../../img/metals/practice/practice1.jpg)
+![alt-text](../../img/metals/practice/practice2.jpg)
