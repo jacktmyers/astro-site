@@ -22,6 +22,6 @@ The bulk of the work after this was the logic required to deal cards, check for 
 
 ### Here’s some gameplay:
 
-![alt-text](../../img/engineering/poker/blackJack.gif)
-![alt-text](../../img/engineering/poker/jacksLoss.gif)
-![alt-text](../../img/engineering/poker/jacksWin.gif)
+![alt-text](/engineering/poker/blackJack.gif)
+![alt-text](/engineering/poker/jacksLoss.gif)
+![alt-text](/engineering/poker/jacksWin.gif)
