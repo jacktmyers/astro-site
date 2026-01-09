@@ -1,80 +1,115 @@
 @use './Variables.scss';
 
 html{
-  height: 100%
+    height: 100%
 }
 
 body {
-  font-family: bodyFont;
-  font-size: Variables.$bodyFontSize;
-  color: Variables.$font-color;
-  background-color: Variables.$background-color;
-  margin: 0;
-  height: 100%;
-
-  /*
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unsmoothed;
-  font-smooth: never;
-  
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-  */
+    font-family: bodyFont;
+    font-size: Variables.$bodyFontSize;
+    color: Variables.$font-color;
+    background-color: Variables.$background-color;
+    margin: 0;
+    height: 100%;
+    
+    /*
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unsmoothed;
+    font-smooth: never;
+    
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    */
 }
 
 a {
-  color: Variables.$pinkColor;
+    color: Variables.$pinkColor;
 }
 
 a:hover{
-  color: Variables.$font-color;
+    color: Variables.$font-color;
 }
 
 .pinkButton:hover {
-  margin-left: Variables.$defaultBorderWidth;
-  margin-top: Variables.$defaultBorderWidth;
-  margin-right: 0;
-  margin-bottom: 0;
-  box-shadow: none;
+    margin-left: Variables.$defaultBorderWidth;
+    margin-top: Variables.$defaultBorderWidth;
+    margin-right: 0;
+    margin-bottom: 0;
+    box-shadow: none;
 }
 
 .pinkButton {
-  display: flex;
-  flex-direction: row;
-  background-color: Variables.$pinkColor;
-  align-items: center;
-  justify-content: center;
-  box-shadow: Variables.$defaultBorderWidth Variables.$defaultBorderWidth 0 0 Variables.$font-color;
-  margin-right: Variables.$defaultBorderWidth;
-  margin-bottom: Variables.$defaultBorderWidth;
+    display: flex;
+    flex-direction: row;
+    background-color: Variables.$pinkColor;
+    align-items: center;
+    justify-content: center;
+    box-shadow: Variables.$defaultBorderWidth Variables.$defaultBorderWidth 0 0 Variables.$font-color;
+    margin-right: Variables.$defaultBorderWidth;
+    margin-bottom: Variables.$defaultBorderWidth;
+    
+    // Link Formatting
+    a {
+        padding: Variables.$defaultPadding;
+        font-size: Variables.$buttonFontSize;
+        color: black;
+        width:100%;
+        text-align: center;
+    }
+    a:link {
+        color: black;
+        text-decoration: none;
+    }
+    a:hover {
+        color: black;
+        text-decoration: none;
+    }
+    a:visited {
+        color: black;
+        text-decoration: none;
+    }
+    a:visited:hover {
+        color: black;
+        text-decoration: none;
+    }
+    a:active {
+        color: black;
+        text-decoration: none;
+    }
+}
 
-  // Link Formatting
-  a {
-    padding: Variables.$defaultPadding;
-    font-size: Variables.$buttonFontSize;
-    color: black;
-    width:100%;
-    text-align: center;
-  }
-  a:link {
-    color: black;
-    text-decoration: none;
-  }
-  a:hover {
-    color: black;
-    text-decoration: none;
-  }
-  a:visited {
-    color: black;
-    text-decoration: none;
-  }
-  a:visited:hover {
-    color: black;
-    text-decoration: none;
-  }
-  a:active {
-    color: black;
-    text-decoration: none;
-  }
+.pixelAccent {
+    height: Variables.$pixelAccentSize;
+    width: Variables.$pixelAccentSize;
+    image-rendering: pixelated;
+}
+
+.pageHeader{
+    .mobileAccents{
+        display: flex;
+        gap: Variables.$pixelAccentPadding;
+        height: min-content;
+    }
+    @media (max-aspect-ratio: Variables.$aspectRatioThresh) {
+        margin-top: calc(Variables.$defaultPadding * 2);
+        flex-direction: column;
+    }
+    @media (min-aspect-ratio: Variables.$aspectRatioThresh) {
+        margin-top: Variables.$defaultPadding;
+        flex-direction: row;
+        gap: Variables.$pixelAccentPadding;
+        align-items: center;
+    }
+    margin-bottom: Variables.$defaultPadding;
+    align-items: top;
+    font-size: Variables.$headerFontSize;
+    margin-left: Variables.$defaultMargin;
+    margin-right: Variables.$defaultMargin;
+    display: flex;
+    justify-content: space-between;
+    .typedParent{
+        flex-grow: 1;
+        padding: 0;
+    }
 }

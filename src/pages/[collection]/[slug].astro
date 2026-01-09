@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import { getEntry, render } from 'astro:content';
+import '../../styles/Global.scss'
+import '../../styles/Post.scss'
+import Banner from '../../components/Banner';
+import Footer from '../../components/Footer';
+import PageHeader from '../../components/PageHeader';
+
+export async function getStaticPaths() {
+    const collections = ['engineering', 'metals'] as const;
+    
+    const paths = await Promise.all(
+    collections.map(async (collection) => {
+        const posts = await getCollection(collection);
+        return posts.map((post) => ({
+            params: { collection, slug: post.id },
+            props: { post },
+        }));
+    })
+    );
+    
+    return paths.flat();
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+---
+<html lang="en">
+<head>
+    <title>{post.data.title}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <Banner client:only />
+    <div class="main">
+        <Banner sticky={false}/>
+        <PageHeader text={post.data.title} client:only></PageHeader>
+        <div class="markdownContent">
+            <Content></Content>
+        </div>
+        <div class="spacer"></div>
+        <Footer client:only />
+    </div>
+</body>
+</html>

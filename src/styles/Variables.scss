@@ -1,36 +1,60 @@
-$aspectRatioThresh: 8/9;
+@use "sass:math";
+
+$aspectRatioThresh: math.div(7, 9);
+$reallySkinny: 270px;
 
 :root {
     --scaleFactor: 1;
+    --mobileRowCount: 4;
+    --desktopRowCount: 4;
+
     --buttonFontSize: calc(3.5vh * var(--scaleFactor));
     --bodyFontSize: calc(2vh * var(--scaleFactor));
     --smallBodyFontSize: calc(1.5vh * var(--scaleFactor));
     --headerFontSize: calc(5vh * var(--scaleFactor));
     --footerHeight: calc(5vh * var(--scaleFactor));
+    --pixelAccentSize: 5vh;
+    --gridEntryFontSize: calc(1.5vw * var(--scaleFactor));
+    --rowCount: var(--desktopRowCount);
     
     @media (max-aspect-ratio: $aspectRatioThresh) {
-        --buttonFontSize: calc(5vw * var(--scaleFactor));
-        --bodyFontSize: calc(4vw * var(--scaleFactor));
-        --smallBodyFontSize: calc(3.5vw * var(--scaleFactor));
-        --headerFontSize: calc(7vw * var(--scaleFactor));
-        --footerHeight: calc(17vw * var(--scaleFactor));
+      --buttonFontSize: calc(3vh * var(--scaleFactor));
+      --bodyFontSize: calc(2vh * var(--scaleFactor));
+      --smallBodyFontSize: calc(1.5vh * var(--scaleFactor));
+      --headerFontSize: calc(8vw * var(--scaleFactor));
+      --footerHeight: calc(8vh * var(--scaleFactor));
+      --gridEntryFontSize: calc(4vw * var(--scaleFactor));
+      --pixelAccentSize: 7vw;
+      --rowCount: var(--mobileRowCount);
     }
+
+    @media (max-width: $reallySkinny) {
+      --rowCount: 1;
+    }
+    
 }
 
+$rowCount: var(--rowCount);
+$gridEntryFontSize: var(--gridEntryFontSize);
+$pixelAccentSize: var(--pixelAccentSize);
 $scaleFactor: var(--scaleFactor);
 $buttonFontSize: var(--buttonFontSize);
 $bodyFontSize: var(--bodyFontSize);
 $smallBodyFontSize: var(--smallBodyFontSize);
 $headerFontSize: var(--headerFontSize);
 $footerHeight: var(--footerHeight);
+$pixelAccentPadding: calc($pixelAccentSize / 4);
 
+$defaultMargin: 5vw;
 $font-color: white;
 $background-color: black;
 $pinkColor: #ffa4a4;
+$codeBackground: #613f3f;
 $pinkPressed: #d38787;
 $defaultBorderWidth: 0.5vh;
 $defaultBorder: $defaultBorderWidth solid;
 $defaultPadding: 1vh;
+$polaroid-color: rgb(240, 240, 240);
 
 $calcFooterHeight: calc($footerHeight + $defaultBorderWidth);
 $headerHeight: $footerHeight;

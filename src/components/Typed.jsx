@@ -29,8 +29,12 @@ export default function Typed({text}) {
 
     return (
         <div className="typedParent">
-            <h1 className="typed">{text.substring(0, index) + cursor}</h1>
-            <h1 className="invisible">{text.substring(index, text.length) + (cursor == "" ? cursorChar : "")}</h1>
+            <h1 className="typed">
+                {text.substring(0, index) + cursor}
+                <span className="invisible">
+                    {text.substring(index, text.length) + (cursor == "" ? cursorChar : "")}
+                </span>
+            </h1>
         </div>
     );
 }

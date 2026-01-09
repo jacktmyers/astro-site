@@ -1,0 +1,77 @@
+@use './Variables.scss';
+
+.main{
+    display: flex;
+    min-height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.grid {
+    margin-left: Variables.$defaultMargin;
+    margin-right: Variables.$defaultMargin;
+    //flex-grow: 1;
+    display: grid;
+    grid-template-columns:
+        repeat(
+            Variables.$rowCount,
+            calc((100% - (Variables.$defaultPadding * 2 * (Variables.$rowCount - 1))) / Variables.$rowCount)
+        );
+    column-gap: calc(Variables.$defaultPadding * 2);
+    row-gap: calc(Variables.$defaultPadding * 2);
+    a{
+        text-decoration: none;
+        height: min-content;
+    }
+}
+
+.gridEntry:hover {
+    margin-left: Variables.$defaultBorderWidth;
+    margin-top: Variables.$defaultBorderWidth;
+    box-shadow: none;
+}
+
+.gridEntry {
+    padding: Variables.$defaultPadding;
+    margin-right: Variables.$defaultBorderWidth;
+    margin-bottom: Variables.$defaultBorderWidth;
+    background: Variables.$polaroid-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: Variables.$defaultBorderWidth Variables.$defaultBorderWidth 0 0 Variables.$pinkColor;
+    height: min-content;
+}
+
+.gridEntryImage{
+    background-color: Variables.$background-color;
+    padding: calc(Variables.$defaultBorderWidth * 2);
+    width: calc(100% - (Variables.$defaultBorderWidth * 4));
+    height: auto;
+
+}
+
+.gridEntryLabel{
+    width: calc(100% - (Variables.$defaultBorderWidth * 4));
+    padding-left: Variables.$defaultPadding;
+    padding-right: Variables.$defaultPadding;
+    padding-top: Variables.$defaultPadding;
+    padding-bottom: Variables.$defaultPadding;
+    text-align: left;
+    color: Variables.$background-color;
+    font-size: Variables.$gridEntryFontSize;
+    padding-top: Variables.$defaultPadding;
+    overflow-wrap: break-word;
+}
+
+.gridInstructions{
+    margin-left: Variables.$defaultMargin;
+    margin-right: Variables.$defaultMargin;
+    margin-bottom: Variables.$defaultPadding;
+    color: Variables.$pinkColor;
+}
+
+.spacer{
+    flex-grow: 1;
+    margin-bottom: Variables.$defaultPadding;
+}

@@ -1,10 +1,27 @@
-import { useState } from 'react';
-import useMobile from './Resizer';"../components/Resizer.jsx"
+import { useState, useEffect } from 'react';
+import useMobile from './Resizer';
 import "../styles/Footer.scss"
 
 function Magnify(){
     const [magnifyHovered, setMagnifyHovered] = useState(false);
-    const [magnifyLevel, setMagnifyLevel] = useState(1);
+    const [magnifyLevel, setMagnifyLevel] = useState(() => {
+        const saved = localStorage.getItem('magnifyLevel');
+        return saved ? parseInt(saved) : 1;
+    });
+    const scaleLookUp = [1, 1.25, 1.5];
+    const desktopGridLookUp = [5,4,4]
+    const mobileGridLookUp = [2,1,1]
+
+    useEffect(() => {
+        document.documentElement.style.setProperty("--scaleFactor", `${scaleLookUp[magnifyLevel - 1]}`);
+        document.documentElement.style.setProperty("--mobileRowCount", `${mobileGridLookUp[magnifyLevel - 1]}`);
+        document.documentElement.style.setProperty("--desktopRowCount", `${desktopGridLookUp[magnifyLevel - 1]}`);
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('magnifyLevel', magnifyLevel.toString());
+    }, [magnifyLevel]);
+
     return(
         <div className="magnifyParent">
             <img 
@@ -17,8 +34,10 @@ function Magnify(){
                 onMouseEnter={() => setMagnifyHovered(true)}
                 onMouseLeave={() => setMagnifyHovered(false)}
                 onClick = {() => {
-                    let newMagnify = (magnifyLevel% 3) + 1;
-                    document.documentElement.style.setProperty("--scaleFactor", `${1+(newMagnify - 1)*.25}`);
+                    let newMagnify = (magnifyLevel % 3) + 1;
+                    document.documentElement.style.setProperty("--scaleFactor", `${scaleLookUp[newMagnify - 1]}`);
+                    document.documentElement.style.setProperty("--mobileRowCount", `${mobileGridLookUp[newMagnify - 1]}`);
+                    document.documentElement.style.setProperty("--desktopRowCount", `${desktopGridLookUp[newMagnify - 1]}`);
                     setMagnifyLevel(newMagnify);
                 }}
             />
@@ -29,7 +48,7 @@ function Magnify(){
 function SourceCode(){
     return (
         <div id="sourceCode">
-            <p>See the&#160;</p> <a href="https://github.com/jacktmyers/jacktmyers.github.io"><p>SOURCE CODE.</p></a>
+            <p>See the&#160;</p> <a href="https://github.com/jacktmyers/astro-site"><p>SOURCE CODE.</p></a>
         </div>
     )
 }

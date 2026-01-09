@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 function getIsMobile() {
     const { innerWidth: width, innerHeight: height} = window;
-    const aspectThresh = 8/9;
+    const aspectThresh = 7/9;
     return (width/height < aspectThresh);
 }
 

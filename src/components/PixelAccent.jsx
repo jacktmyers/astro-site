@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import '../styles/PixelAccent.scss'
 
 export default function PixelAccent({
     num=-1,

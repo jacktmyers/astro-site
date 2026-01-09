@@ -1,0 +1,166 @@
+@use './Variables.scss';
+
+body {
+    font-size: Variables.$bodyFontSize;
+}
+
+
+.markdownContent{
+    > * {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    //margin-top: calc(Variables.$defaultPadding * 2);
+    margin-bottom: calc(Variables.$defaultPadding * 2);
+    display: flex;
+    gap: calc(Variables.$defaultPadding * 2);
+    flex-direction: column;
+    align-items: center;
+    margin-left: Variables.$defaultMargin;
+    margin-right: Variables.$defaultMargin;
+
+    code {
+        background: Variables.$codeBackground;
+        color: Variables.$font-color;
+        font-family: bodyFont;;
+        padding-left: Variables.$defaultPadding;
+        padding-right: Variables.$defaultPadding;
+        font-weight: normal;
+    }
+
+    h1{
+        font-weight: normal;
+        font-family: headerFont;
+        font-size: Variables.$headerFontSize;
+        margin: 0;
+    }
+
+    h3{
+        font-size: Variables.$bodyFontSize;
+        font-weight: normal;
+        color: Variables.$pinkColor;
+    }
+
+    iframe {
+        border: Variables.$defaultBorder;
+        @media (max-aspect-ratio: Variables.$aspectRatioThresh) {
+            width: 80vw;
+            height: 50vw;
+        }
+        @media (min-aspect-ratio: Variables.$aspectRatioThresh) {
+            width: 50vw;
+            height: 28vw;
+        }
+    }
+
+    img {
+        @media (min-aspect-ratio: Variables.$aspectRatioThresh) {
+            height: calc(30vh * Variables.$scaleFactor);
+            width: auto;
+        }
+        @media (max-aspect-ratio: Variables.$aspectRatioThresh) {
+            width: calc(100% - Variables.$defaultBorderWidth*2 - Variables.$defaultPadding*2);
+            height: auto;
+        }
+        border: Variables.$defaultBorder;
+        padding: Variables.$defaultPadding;
+    }
+
+    // Standalone Images
+    p:has(img):not(:has(em)) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: calc(Variables.$defaultPadding * 2);
+        align-items: center;
+        justify-content: center;
+    }
+
+    // Big Caption Image
+    p:has(strong):has(img):has(em){
+        strong{
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (min-aspect-ratio: Variables.$aspectRatioThresh) {
+            img {
+                width: 60vw;
+                height: auto;
+            }
+        }
+    }
+
+    // Inline Image
+    p:has(strong):has(img):not(:has(em)){
+        @media (max-aspect-ratio: Variables.$aspectRatioThresh) {
+            flex-direction: column;
+            gap: Variables.$defaultPadding;
+        }
+        @media (min-aspect-ratio: Variables.$aspectRatioThresh) {
+            flex-direction: row;
+            img {
+                width: calc(30% * Variables.$scaleFactor);
+                height: auto;
+            }
+            gap: calc(2*Variables.$defaultPadding);
+        }
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        strong{
+            font-weight: normal;
+        }
+    }
+
+    // Caption Image
+    p:has(em):has(img) {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        @media (max-aspect-ratio: Variables.$aspectRatioThresh) {
+            width: 100%;
+        }
+        @media (min-aspect-ratio: Variables.$aspectRatioThresh) {
+            width: auto;
+        }
+        img {
+            padding: Variables.$defaultPadding;
+        }
+        em{
+            color: Variables.$pinkColor;
+            text-align: center;
+            padding: Variables.$defaultPadding;
+            text-overflow: wrap;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    li {
+        padding-left: 1em;
+    }
+
+    li:before {
+    content: ">";
+        padding-right: 5px;
+        color: Variables.$pinkColor;
+    }
+}
+
+.main{
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+
+.spacer{
+    flex-grow: 1;
+}

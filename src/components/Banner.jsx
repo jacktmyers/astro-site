@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import "../styles/Banner.scss"
 
-export default function Banner() {
+export default function Banner({sticky=true}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="banner">
+    <div className={`banner ${sticky?"sticky":""}`}>
       <a href="https://www.jacktmyers.com">
         <img 
           src={isHovered ? "/websiteNamePushed.png" : "/websiteName.png"}

@@ -1,5 +1,7 @@
 ---
 import Home from "../components/Home"
+import { Image } from 'astro:assets';
+import headshot from '../img/home/headshot.png'
 ---
 <html lang="en">
 	<head>
@@ -10,6 +12,7 @@ import Home from "../components/Home"
 		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
-		<Home client:only></Home>
+		<Home client:only>
+		</Home>
 	</body>
 </html>

@@ -1,8 +1,8 @@
-import Header from '../components/Banner.jsx';
+import Banner from '../components/Banner.jsx';
 import Footer from '../components/Footer.jsx';
 import Typed from '../components/Typed.jsx';
 import PixelAccent from '../components/PixelAccent.jsx'
-import useMobile from './Resizer';"../components/Resizer.jsx"
+import useMobile from './Resizer';
 import '../styles/Home.scss'
 import '../styles/Global.scss'
 import { useEffect, useState } from 'react';
@@ -26,10 +26,10 @@ function homeMobileSwitch(isMobile){
                                 Enjoy!
                             </p>
                             <div className = "pinkButton">
-                                <a href="engineering/">ENGINEERING</a>
+                                <a href="/engineering">ENGINEERING</a>
                             </div>
                             <div className = "pinkButton">
-                                <a href="metals/">METALS</a>
+                                <a href="/metals">METALS</a>
                             </div>
                         </div>
                     </div>
@@ -49,10 +49,10 @@ function homeMobileSwitch(isMobile){
                             I have worked on. Enjoy!
                         </p>
                         <div className = "pinkButton">
-                            <a href="engineering/">ENGINEERING</a>
+                            <a href="/engineering">ENGINEERING</a>
                         </div>
                         <div className = "pinkButton">
-                            <a href="metals/">METALS</a>
+                            <a href="/metals">METALS</a>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ export default function Home(){
 
     return (
         <div className="main">
-            <Header client:load />
+            <Banner sticky={false} client:load />
             <div className="homeParent">
                 <div className="borderElements">
                     <PixelAccent num={3} flipX={-1}></PixelAccent>

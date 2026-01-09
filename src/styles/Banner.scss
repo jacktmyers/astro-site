@@ -1,6 +1,12 @@
 @use './Variables.scss';
 
 .banner {
+    &.sticky{
+        position: fixed;
+        top:0;
+        z-index: 100;
+    }
+    background-color: Variables.$background-color;
     margin-top: 0;
     padding-top: 0;
     width: 100%;
@@ -9,12 +15,22 @@
     justify-content: center;
     border-bottom: Variables.$defaultBorder;
     height: Variables.$headerHeight;
+    @media (max-aspect-ratio: Variables.$aspectRatioThresh) {
+        height: fit-content;
+    }
 }
 .banner a {
     display: flex;
     height: 100%;
+    
+    @media (max-aspect-ratio: Variables.$aspectRatioThresh) {
+        height: min-content;
+        width: 100%;
+    }
 }
 .banner a img {
+    padding-left: Variables.$defaultMargin;
+    padding-right: Variables.$defaultMargin;
     @media (max-aspect-ratio: Variables.$aspectRatioThresh) {
         width: 100%;
         height: auto;
