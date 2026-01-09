@@ -2,7 +2,7 @@
 id: ardemo
 listingTitle: AR Demo
 title: Augmented Reality Demo
-order: 2
+order: 3
 ---
 ### At work I created an augmented reality demo to be used with the Hololens 2 and the Magic Leap 2. The tech stack I used was:
 
