@@ -21,7 +21,9 @@ But before we can go anywhere, we gotta clean some data. The “goop” I mentio
 Now that we have our data filtered, we can start loading it into our program. Each of the three sets (RGB, CT, Segments) used for this demo are stored in the GPU as a 3D texture. This is essentially a 3-axis lookup table, where the input values are between 0 and 1. We can use this later to easily and quickly sample data in our fragment shader.
 
 **[Nvidia](https://developer.nvidia.com/gpugems/gpugems/part-vi-beyond-triangles/chapter-39-volume-rendering-techniques) did a great write up on the technique I used, so I won’t go too in depth. The main idea is that we are not going to display a 3D object per se, but instead a bunch of 2D images overlayed on top of each other. Below is a good picture of what these primitives look like and how they would intersect with the bounding box. These 2D shapes are always parallel to the camera, to limit the artifacts.**
+
 ![alt-text](../../img/engineering/volumetric/nvidiaVolume.jpg)
+*Slices*
 
 ![alt-text](../../img/engineering/volumetric/viewFrustrum.png)
 *2D Primitive Construction*
