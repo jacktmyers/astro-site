@@ -23,10 +23,7 @@ Now that we have our data filtered, we can start loading it into our program. Ea
 **[Nvidia](https://developer.nvidia.com/gpugems/gpugems/part-vi-beyond-triangles/chapter-39-volume-rendering-techniques) did a great write up on the technique I used, so I won’t go too in depth. The main idea is that we are not going to display a 3D object per se, but instead a bunch of 2D images overlayed on top of each other. Below is a good picture of what these primitives look like and how they would intersect with the bounding box. These 2D shapes are always parallel to the camera, to limit the artifacts.**
 
 ![alt-text](../../img/engineering/volumetric/nvidiaVolume.jpg)
-*Slices*
-
 ![alt-text](../../img/engineering/volumetric/viewFrustrum.png)
-*2D Primitive Construction*
 
 Nvidia does not go into detail on how to calculate the primitives needed for this technique, so I drew up a simple algorithm to create them:
 
