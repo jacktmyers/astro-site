@@ -5,7 +5,7 @@ title: R.A.C.H.E.L.
 order: 2
 ---
 
-<iframe src="https://www.youtube.com/embed/2U9LDkjIGB8"></iframe> 
+<iframe src="https://www.youtube.com/embed/2U9LDkjIGB8" allowfullscreen></iframe> 
 
 ### R.A.C.H.E.L. consisted of two computers:
 * A micro-controller that served as ears for the table. Whenever a ball bounced on the table, the microphone array could tell you when a ball bounced and on what side of the table it bounced on.
